@@ -59,6 +59,9 @@ public class Expression {
 		String partern = "[a-zA-Z]+=\\-{0,1}[0-9]+";
 		String[] vars=str.split(",");
 		for(String s:vars){
+			if(s.length()==0){
+				return root.toString();
+			}
 			if(!s.matches(partern)){
 				System.out.println(s);
 				return "Wrong Parameter!!!";
